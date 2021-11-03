@@ -13,7 +13,8 @@ public class YieldTest {
         );
         Thread t2 = new Thread(() -> {
             try {
-                Thread.yield(); // Not used - depends on the operating system
+                Thread.sleep(1000000000);
+                // Thread.yield(); // Not used - depends on the operating system
                 //Thread.currentThread().join();  // This is used widely
             } catch (Exception e) {
                 e.printStackTrace();
