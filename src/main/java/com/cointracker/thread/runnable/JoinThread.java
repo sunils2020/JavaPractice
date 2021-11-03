@@ -1,11 +1,12 @@
 package com.cointracker.thread.runnable;
 
 public class JoinThread {
-    public static void main(String[] args) throws InterruptedException {
+    public static void main(String[] args) throws Exception {
         Thread t = new Thread(
                 ()->{
                     for(int i=0;i<1000;i++)
                         System.out.println("In child thread "+i);
+                    Thread.currentThread().notify();
                 }
         );
         t.start();
